@@ -8,7 +8,7 @@
 
 <body>
     <p id="score" align = "center"> Score 0 </p>
-    <img src="/images/zombie.jpg" id = "target" onclick="death()">
+    <img src="images/zombie.jpg" id = "target" onclick="death()">
     <button id ="hi" onclick="quitter()">Quit</button>
     <script>
         let score = 0;
@@ -24,14 +24,14 @@
         }
         
         function zombieReturn(){
-            document.getElementById("target").src= "/images/zombie.jpg";
+            document.getElementById("target").src= "images/zombie.jpg";
         }
         
         function death(){
-            let sound = new Audio("/src/oof.mp3");
+            let sound = new Audio("src/oof.mp3");
             sound.play();
             score = score + 1;
-            document.getElementById("target").src= "/images/lily.gif";
+            document.getElementById("target").src= "images/lily.gif";
             setTimeout(zombieReturn, 1081);
             document.getElementById("score").innerHTML = "Score " + score;            
         }
@@ -55,4 +55,4 @@
     </script>
 </body>
 </html>
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="css/style.css">
