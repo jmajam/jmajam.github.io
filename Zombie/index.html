@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <p id="score" align = "center"> Score 0 </p>
+    <img src="/images/zombie.jpg" id = "target" onclick="death()">
+    <button id ="hi" onclick="quitter()">Quit</button>
+    <script>
+        let score = 0;
+        let quit = false;
+        let random = setInterval(moveImage,2000);
+        function moveImage(){
+            let windowWidth = window.innerWidth;
+            let windowHeight = window.innerHeight;
+            let xAxis = Math.random() * (windowWidth-200);  
+            let yAxis = Math.random() * (windowHeight-100);
+            document.getElementById("target").style.left = xAxis + "px";
+            document.getElementById("target").style.top = yAxis + "px";
+        }
+        
+        function zombieReturn(){
+            document.getElementById("target").src= "/images/zombie.jpg";
+        }
+        
+        function death(){
+            let sound = new Audio("/src/oof.mp3");
+            sound.play();
+            score = score + 1;
+            document.getElementById("target").src= "/images/lily.gif";
+            setTimeout(zombieReturn, 1081);
+            document.getElementById("score").innerHTML = "Score " + score;            
+        }
+        function quitter(){
+            let windowWidth = window.innerWidth;
+            let windowHeight = window.innerHeight;
+            quit = true;
+            check();
+            score = 0;
+            clearInterval(random);
+            document.getElementById("target").style.left = windowWidth/2 + "px";
+            document.getElementById("target").style.top = windowHeight/2 + "px";
+            
+        }
+        function check(){
+            if (quit ===true){
+                document.getElementById("score").innerHTML = "Score 0" ;
+            }
+        }
+        
+    </script>
+</body>
+</html>
+<link rel="stylesheet" href="/css/style.css">
