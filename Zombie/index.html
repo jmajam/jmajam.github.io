@@ -24,14 +24,14 @@
         }
         
         function zombieReturn(){
-            document.getElementById("target").src= "/images/zombie.jpg";
+            document.getElementById("target").src= "Zombie/images/zombie.jpg";
         }
         
         function death(){
-            let sound = new Audio("/src/oof.mp3");
+            let sound = new Audio("Zombie/src/oof.mp3");
             sound.play();
             score = score + 1;
-            document.getElementById("target").src= "/images/lily.gif";
+            document.getElementById("target").src= "Zombie/images/lily.gif";
             setTimeout(zombieReturn, 1081);
             document.getElementById("score").innerHTML = "Score " + score;            
         }
@@ -55,4 +55,4 @@
     </script>
 </body>
 </html>
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="Zombie/css/style.css">
