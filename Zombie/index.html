@@ -15,12 +15,14 @@
         let quit = false;
         let random = setInterval(moveImage,2000);
         function moveImage(){
-            let windowWidth = window.innerWidth;
-            let windowHeight = window.innerHeight;
-            let xAxis = Math.random() * (windowWidth-200);  
-            let yAxis = Math.random() * (windowHeight-100);
+            let width = window.innerWidth;
+            let height = window.innerHeight;
+            let xAxis = Math.floor(Math.random() * (width-200));
+            let yAxis = Math.floor(Math.random() * (height-100));
             document.getElementById("target").style.left = xAxis + "px";
             document.getElementById("target").style.top = yAxis + "px";
+            document.getElementById("target").style.transform = 'initial';
+            
         }
         
         function zombieReturn(){
