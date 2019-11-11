@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        button {
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function randomletter(buttons){
+            for(let i = 0; i<=buttons-1; i++ ){
+                let letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                let letter = letters.split('');
+                let sentence = "Button " + letter[i] + " was clicked";
+                let button = document.createElement("BUTTON");
+                button.innerHTML = letter[i];
+                button.style = "margin:5px;";
+                button.onclick = function(){ console.log(sentence); };
+                document.body.appendChild(button); 
+            }
+            document.write("<br>");
+        }
+
+        randomletter(26);
+        function recipe (title, servings, ingredients){
+            this.titles = "Title: " + title;
+            this.serving = "Serves: " + servings;
+            this.ingredient = ingredients;
+            this.print = function () {
+                document.write(this.titles + "<br>");
+                document.write("\n");
+                document.write(this.serving+ "<br>");
+                document.write("\n");
+                document.write("Ingredients:<br>")
+                for (let j = 0; j < ingredients.length; j++){
+                    document.write(ingredients[j] + "<br>");
+                    document.write("\n");
+                }
+            }
+        }
+        obj = new recipe("yes", 2, ['breast','sauce']);
+        obj.print();
+        
+    </script>
+    
+</body>
+</html>
